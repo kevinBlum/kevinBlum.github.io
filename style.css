@@ -1,0 +1,318 @@
+
+body {
+
+  padding: 2em;
+
+  background-color: #006600;
+
+}
+
+
+header {
+
+    border: 10px grey inset;
+
+    border-radius: 25px;
+
+    margin: auto;
+
+}
+
+
+nav{
+
+    border: 10px grey inset;
+
+    border-radius: 25px;
+
+}
+
+
+.txt{
+
+    float: right;
+
+}
+
+
+textarea{
+
+    float: right;
+
+}
+
+
+.wrapper {
+
+
+ display: -webkit-box;
+
+ display: -moz-box;
+
+ display: -ms-flexbox;
+
+ display: -webkit-flex;
+
+ display: flex; 
+
+
+
+ -webkit-flex-flow: row wrap;
+
+ flex-flow: row wrap;
+
+
+
+  font-weight: bold;
+
+  text-align: justify;
+
+}
+
+/*Select all the elements within wrapper*/
+
+.wrapper > * {
+
+  background-color: #D4D419;
+
+  padding: 10px;
+
+  flex: 1 100%;
+
+}
+
+#menu {
+
+  border: 10px grey inset;
+
+    border-radius: 25px;
+
+  list-style: none;
+
+  margin: 0;  
+
+  padding: 0;
+
+  background-color: green;
+
+
+
+  display: -webkit-box;
+
+  display: -moz-box;
+
+  display: -ms-flexbox;
+
+  display: -webkit-flex;
+
+  display: flex;
+
+
+
+ -webkit-flex-flow: row wrap;
+
+  justify-content: space-around; 
+
+}
+
+
+
+#menu ul{
+
+  position: absolute;
+
+  visibility: hidden;
+
+  margin: 0;  
+
+  padding: 0;  
+
+}
+
+#menu ul a{
+
+  position: relative;
+
+  display: block; 
+
+  margin: 0;  
+
+  background-color: #308330;
+
+  z-index: 50;
+
+}
+
+#menu ul a:hover{
+
+background-color: lightgreen;
+
+}
+
+#menu  li {
+
+  list-style: none;
+
+  margin: 0;  
+
+  padding: 0;
+
+  float:center;
+
+}
+
+#menu li a {
+
+  text-decoration: none;
+
+  display: block;
+
+  padding: 10px;
+
+  color: white;
+
+}
+
+#menu  li a:hover {
+
+  background-color: deepblue;
+
+}
+
+p{
+
+ text-align: justify;
+
+}
+
+.footer {
+
+ border: 10px grey inset;
+
+    border-radius: 25px;
+
+ background-color: #D4D419;
+
+}
+
+.main {
+
+ border: 10px grey inset;
+
+    border-radius: 25px;
+
+ text-align: left;
+
+ background-color: #47A347;
+
+ height:500px;
+
+}
+
+.aside-1 {
+
+ border: 10px grey inset;
+
+    border-radius: 25px;
+
+ background-color: #47A347;
+
+
+
+}
+
+
+#googleMap{
+
+ width:100%;
+
+ height:100%;
+
+}
+
+@media all and (min-width: 768px)
+
+{
+
+ #menu
+
+ {
+
+  justify-content: space-around;
+
+ }
+
+ .aside {
+
+  flex: 0 auto;
+
+ } 
+
+ .aside-1 {
+
+  order: 1;
+
+ }
+
+ .main    {
+
+  flex: 3 0px;
+
+  order: 2;
+
+ }
+
+
+
+ .footer  {
+
+  order: 4;
+
+ }  
+
+}
+
+@media all and (max-width: 480px) {
+
+ #menu
+
+ {
+
+  -webkit-flex-flow: column wrap;
+
+  flex-flow: column wrap;
+
+  padding: 0;
+
+ } 
+
+ #menu  a
+
+ {
+
+  text-align: center;
+
+  padding: 10px;
+
+  border-top: 1px solid rgba(255,255,255,0.3);
+
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+
+ } 
+
+ #menu  li:last-of-type a
+
+ {
+
+  border-bottom: none;
+
+ }
+
+
+
+ #menu ul{
+
+ display: none;
+
+ }
+}
