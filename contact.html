@@ -1,237 +1,129 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
- <title> Page Layout Example </title>
-
+ <title> Hyrule Vacations - Contact </title>
  <meta charset="utf-8">
-
  <link rel="stylesheet" href="style.css">
-
  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBFjitiePpiQZGw8Dncojy6RL71dFy0BtE&sensor=false">
-
 </script>
-
+<style>
+	body{
+		background-image: url("hyrule.png");
+		background-size: cover;
+		background-position: center;
+	}
+ </style>
 </head>
-
 <body>
-
  <div class="wrapper">
-
  <header>
-
-    <h1>Hyrule Vacations</h1>
-
+	<h1>Hyrule Vacations</h1>
  </header>
-
  <nav>
-
   <ul id="menu">
-
    <li id="Item1">
-
    <a href="index.html" onmouseover="CloseMenu()">Home</a>
-
    </li>
-
    <li id="Item2">
-
    <a href="index.html" onmouseover="OpenMenu('Item2Submenu')">Places</a>
-
     <ul id="Item2Submenu" onmouseover="KeepSubmenu()" onmouseout="CloseMenu()">
-
     <a href="about.html">Kokiri Forest</a>
-
     <a href="about.html">Goron City</a>
-
     <a href="about.html">Zora’s Domain</a>
-
     <a href="about.html">Kakariko Village</a>
-
     <a href="about.html">Gerudo Valley</a>
-
     </ul>
-
    </li>
-
    <li id="Item3"><a href="#">Prices</a></li>
-
    <li id="Item4">
-
    <a href="contact.html" onmouseover="CloseMenu()">Contact</a>
-
    </li>
-
   </ul>
-
  </nav>
-
-
-
+ 
  <article class="main">
-
  <div id="googleMap">
-
  </div>
-
  </article>
-
  <aside class="aside aside-1">
-
-     <form name="contact" id="contact" method="post" action="contact.php">
-
-     <legend> Contact Information </legend>
-
-     <br><br>
-
-     <label for="fname"> First Name: </label> <input class="txt" type="text" name="fname" id="fname" required="required">
-
-     <br><br>
-
-     <label for="lname"> Last Name: </label> <input class="txt" type="text" name="lname" id="lname" required="required">
-
-     <br><br>
-
-     <label for="email"> E-mail: </label> <input class="txt" type="email" name="email" id="email" required="required">
-
-     <br><br> <label for="tel"> Telephone: </label> <input class="txt" type="tel" name="tel" id="tel" required="required">
-
-     <br><br> Comments: <textarea name="comments" id="comments" rows="4" cols="40"> </textarea>
-
-     <br><br><br><br> <input type="submit" value="Contact">  <input type="reset">
-
-     </form> 
-
+	 <form name="contact" id="contact" method="post" action="contact.php">
+	 <legend> Contact Information </legend>
+	 <br><br>
+	 <label for="fname"> First Name: </label> <input class="txt" type="text" name="fname" id="fname" required="required">
+	 <br><br>
+	 <label for="lname"> Last Name: </label> <input class="txt" type="text" name="lname" id="lname" required="required">
+	 <br><br>
+	 <label for="email"> E-mail: </label> <input class="txt" type="email" name="email" id="email" required="required">
+	 <br><br> <label for="tel"> Telephone: </label> <input class="txt" type="tel" name="tel" id="tel" required="required">
+	 <br><br> Comments: <textarea name="comments" id="comments" rows="4" cols="40"> </textarea>
+	 <br><br><br><br> <input type="submit" value="Contact">  <input type="reset">
+	 </form> 
 </aside>
-
  <footer class="footer">&copy;Copyright 2014 Justin Fernandez and Kevin Blum</footer>
-
  </div> 
-
   <p id="valid">
-
-    <a href="http://jigsaw.w3.org/css-validator/check/referer">
-
-        <img style="border:0;width:88px;height:31px;float:right;"
-
-            src="http://jigsaw.w3.org/css-validator/images/vcss"
-
-            alt="Valid CSS!" />
-
-    </a>
-
+	<a href="http://jigsaw.w3.org/css-validator/check/referer">
+    	<img style="border:0;width:88px;height:31px;float:right;"
+        	src="http://jigsaw.w3.org/css-validator/images/vcss"
+        	alt="Valid CSS!" />
+	</a>
 </p>
-
  <script>
-
  var Item; //Hold current open menu item
-
  var Timer; //Hold timeout value
-
  document.onclick=CloseMenu; //Hide the menu after clicking outside it
-
-
-
+ 
  function OpenMenu(Menu)
-
  {
-
   //if open, close it
-
   if(Item)
-
   {
-
    Item.style.visibility="hidden";
-
   }
-
   //setup new menu item
-
   Item=document.getElementById(Menu);
-
   Item.style.visibility="visible";
-
  }
-
-
-
+ 
  function CloseMenu()
-
  {
-
   //setup a timer to close menu
-
   Timer = window.setTimeout(PerformClose, 500);
-
  }
-
-
-
+ 
  function PerformClose()
-
  {
-
   if(Item)
-
   {
-
    Item.style.visibility="hidden";
-
   }
-
  }
-
-
-
+ 
  function KeepSubmenu()
-
  {
-
  //reset the timer
-
   window.clearTimeout(Timer);
-
  }
-
  var myCenter=new google.maps.LatLng(34.9697101, 135.7561912);
-
 var marker;
-
 function initialize()
-
 {
-
 var mapProp = {
-
   center:myCenter,
-
   zoom:18,
-
   mapTypeId:google.maps.MapTypeId.SATELLITE
-
   };
-
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
 marker=new google.maps.Marker({
-
   position:myCenter,
-
   animation:google.maps.Animation.BOUNCE
-
   });
-
 marker.setMap(map);
-
 }
-
 google.maps.event.addDomListener(window, 'load', initialize);
-
  </script>
-
 </body>
 </html>
+
+
+
