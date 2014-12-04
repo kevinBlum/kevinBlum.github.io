@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title> Hyrule Vacations - Home </title>
+ <meta charset="utf-8">
+ <link rel="stylesheet" href="style.css">
+ <style>
+	body{
+		background-image: url("hyrule.png");
+		background-size: cover;
+		background-position: center;
+	}
+ </style>
+</head>
+<body>
+ <div class="wrapper">
+<header>
+	<h1>Hyrule Vacations</h1>
+</header>
+ <nav>
+  <ul id="menu">
+   <li id="Item1">
+   <a href="index.html" onmouseover="CloseMenu()">Home</a>
+   </li>
+   <li id="Item2">
+   <a href="index.html" onmouseover="OpenMenu('Item2Submenu')">Places</a>
+    <ul id="Item2Submenu" onmouseover="KeepSubmenu()" onmouseout="CloseMenu()">
+	<a href="kokiri.html">Kokiri Forest</a>
+    <a href="goron.html">Goron City</a>
+    <a href="zora.html">Zora’s Domain</a>
+    <a href="kakariko.html">Kakariko Village</a>
+    <a href="gerudo.html">Gerudo Valley</a>
+    </ul>
+   </li>
+   <li id="Item3"><a href="prices.html">Prices</a></li>
+   <li id="Item4">
+   <a href="contact.html" onmouseover="CloseMenu()">Contact</a>
+   </li>
+  </ul>
+ </nav>
+ <article class="main">
+  <table border = "1" style="width:100%">
+	<thead>Hyrule Vacations Prices</thead>
+	<br><br>
+  <tr>
+    <td>Kokiri Forest</td>
+    <td>50 rupees per night</td>
+  </tr>
+  <tr>
+    <td>Goron City</td>
+    <td>10 rupees per night</td>
+  </tr>
+    <tr>
+    <td>Zora's Domain</td>
+    <td>20 rupees per night</td>
+  </tr>
+    <tr>
+    <td>Kakariko Village</td>
+    <td>25 rupees per night</td>
+  </tr>
+    <tr>
+    <td>Gerudo Valley</td>
+    <td>100 rupees per night</td>
+  </tr>
+</table>
+ </article>
+ <aside class="aside aside-1">
+	<h2>Recent News:</h2>
+	<ul>
+		<h4>-Dark Cloud at Death Mountain</h4>
+		<h4>-Kakariko Village Opens!</h4>
+		<h4>-Lon Lon Ranch New Ownership</h4>
+		<h4>-Zelda Kidnapped!</h4>
+		<h4>-Boy Breaks Fishing Record</h4>
+		<h4>-Great Deku Tree Dies</h4>
+		<h4>-First Gerudo Male of Milenia</h4>
+	</ul>
+ </aside>
+ <footer class="footer">&copy;Copyright 2014 Justin Fernandez and Kevin Blum 
+ </footer>
+ </div> 
+ <p>
+	<a href="http://jigsaw.w3.org/css-validator/check/referer">
+    	<img style="border:0;width:88px;height:31px;float:right;"
+        	src="http://jigsaw.w3.org/css-validator/images/vcss"
+        	alt="Valid CSS!" />
+	</a>
+</p>
+ 
+ <script>
+ var Item; //Hold current open menu item
+ var Timer; //Hold timeout value
+ document.onclick=CloseMenu; //Hide the menu after clicking outside it
+ 
+ function OpenMenu(Menu)
+ {
+  //if open, close it
+  if(Item)
+  {
+   Item.style.visibility="hidden";
+  }
+  //setup new menu item
+  Item=document.getElementById(Menu);
+  Item.style.visibility="visible";
+ }
+ 
+ function CloseMenu()
+ {
+  //setup a timer to close menu
+  Timer = window.setTimeout(PerformClose, 500);
+ }
+ 
+ function PerformClose()
+ {
+  if(Item)
+  {
+   Item.style.visibility="hidden";
+  }
+ }
+ 
+ function KeepSubmenu()
+ {
+ //reset the timer
+  window.clearTimeout(Timer);
+ }
+ </script>
+</body>
+</html>
