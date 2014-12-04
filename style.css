@@ -42,6 +42,13 @@ textarea{
 }
 
 
+h2{
+
+    float: right;
+
+}
+
+
 .wrapper {
 
 
@@ -244,7 +251,7 @@ p{
 
  .aside {
 
-  flex: 0 auto;
+  flex: 1 auto;
 
  } 
 
@@ -256,7 +263,7 @@ p{
 
  .main    {
 
-  flex: 3 0px;
+  flex: 7 0px;
 
   order: 2;
 
@@ -316,3 +323,4 @@ p{
 
  }
 }
+
